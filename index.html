@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ═══════════════════════════════════════════
+     BLOOM-THE-RIZZ  |  SEO + Core Web Vitals
+═══════════════════════════════════════════ -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<!-- Primary SEO: update the domain below if your final domain is different -->
+<title>BLOOM-THE-RIZZ | Fresh Flowers, Bouquets &amp; Online Flower Shop</title>
+<meta name="description" content="Shop fresh flowers online at BLOOM-THE-RIZZ. Explore bouquets, vase flowers, pooja flowers, single stems, gajara and floral decor, with next-morning delivery and a ₹25 delivery charge."/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta name="author" content="BLOOM-THE-RIZZ"/>
+<meta name="theme-color" content="#FAF5EC"/>
+<link rel="canonical" href="https://bloomandslot.com/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="BLOOM-THE-RIZZ | Fresh Flowers &amp; Bouquets Online"/>
+<meta property="og:description" content="Discover bouquets, vase flowers, pooja flowers, single stems, gajara and floral decor at BLOOM-THE-RIZZ."/>
+<meta property="og:url" content="https://bloomandslot.com/"/>
+<meta property="og:site_name" content="BLOOM-THE-RIZZ"/>
+<meta property="og:locale" content="en_IN"/>
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="BLOOM-THE-RIZZ | Fresh Flowers Online"/>
+<meta name="twitter:description" content="Shop bouquets, vase flowers, pooja flowers, gajara and more at BLOOM-THE-RIZZ."/>
+
+<!-- Structured data. Keep business details accurate and update the URL if your domain changes. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Florist",
+  "@id": "https://bloomandslot.com/#florist",
+  "name": "BLOOM-THE-RIZZ",
+  "url": "https://bloomandslot.com/",
+  "description": "Online flower shop offering bouquets, vase flowers, pooja flowers, single stems, gajara and floral decor, with next-morning delivery.",
+  "telephone": "+917829977348",
+  "priceRange": "₹20–₹550",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Confirm payment methods with BLOOM-THE-RIZZ",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+917829977348",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Hindi"]
+  }
+}
+</script>
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to products</a>
+
+<!-- ═══ TOPBAR ══════════════════════════════════ -->
+<header class="topbar" role="banner">
+  <a class="logo" href="/" aria-label="BLOOM-THE-RIZZ Home">
+    <div class="logo-circle" aria-hidden="true">
+      <img src="assets/image-01.png" alt="" />
+    </div>
+    <div>
+      <div class="logo-txt">BLOOM<span>-THE-RIZZ</span></div>
+      <div class="logo-sub">Fresh Flowers Daily</div>
+    </div>
+  </a>
+  <div class="searchbar" role="search">
+    <input type="search" id="sd" placeholder="Search bouquets, stems, mogra…"
+      oninput="doSearch(this.value,'dd')" autocomplete="off" aria-label="Search products"/>
+    <span class="s-ico" aria-hidden="true">🔍</span>
+    <div class="s-drop" id="dd" role="listbox" aria-label="Search results"></div>
+  </div>
+  <button class="cart-btn" onclick="openCart()" aria-label="Open cart">
+    🛒 Cart <span class="cbadge" id="cBadge" aria-live="polite">0</span>
+  </button>
+</header>
+
+<!-- CUSTOMIZE & SUBSCRIBE BANNER -->
+<div class="promo-banner" role="region" aria-label="Customize or subscribe">
+  <button class="promo-btn" onclick="openCustomPanel('Bouquet')">
+    <span class="promo-ico">💐</span>
+    <span class="promo-txt">
+      <strong>Bouquets</strong>
+      <small>Customize &amp; Order →</small>
+    </span>
+  </button>
+  <button class="promo-btn" onclick="openCustomPanel('Vase')">
+    <span class="promo-ico">🌷</span>
+    <span class="promo-txt">
+      <strong>Flowers for Vase</strong>
+      <small>Customize &amp; Order →</small>
+    </span>
+  </button>
+</div>
+<div class="promo-banner" role="region" aria-label="Subscribe" style="border-top:none;padding-top:0">
+  <button class="promo-btn promo-btn-alt" onclick="openSubPanel()" style="flex:1">
+    <span class="promo-ico">🔁</span>
+    <span class="promo-txt">
+      <strong>Subscribe &amp; Save</strong>
+      <small>Weekly or monthly flower delivery</small>
+    </span>
+  </button>
+</div>
+
+<!-- MOBILE SEARCH -->
+<div class="mob-bar" role="search">
+  <input type="search" id="sm" placeholder="Search flowers, bouquets…"
+    oninput="doSearch(this.value,'dm')" autocomplete="off" aria-label="Search products"/>
+  <span class="mob-s-ico" aria-hidden="true">🔍</span>
+  <div class="s-drop" id="dm" role="listbox"></div>
+</div>
+
+<!-- CATEGORY STRIP -->
+<nav class="cat-strip" id="cat-strip-main" aria-label="Product categories">
+  <div class="cat-pill active" onclick="scrollSec('s-bouquets',this)" role="button" tabindex="0">💐 Bouquets</div>
+  <div class="cat-pill" onclick="scrollSec('s-vase',this)" role="button" tabindex="0">🌷 Flowers for Vase</div>
+  <div class="cat-pill" onclick="scrollSec('s-pooja',this)" role="button" tabindex="0">🙏 Pooja Flowers</div>
+  <div class="cat-pill" onclick="scrollSec('s-stems',this)" role="button" tabindex="0">🌺 Stems</div>
+  <div class="cat-pill" onclick="scrollSec('s-gajara',this)" role="button" tabindex="0">🌸 Gajara</div>
+  <div class="cat-pill" onclick="scrollSec('s-decor',this)" role="button" tabindex="0">🎋 Decor &amp; Accessories</div>
+</nav>
+
+<!-- SUBCATEGORY FILTER STRIP -->
+<nav class="cat-strip" id="subcat-strip" aria-label="Filter by flower type" style="border-top:1px solid #efefef"></nav>
+
+<!-- DELIVERY BAR -->
+<div class="delivery-bar" role="complementary" aria-label="Delivery info">
+  <span class="db-pill">🌙 Next Morning Delivery</span>
+  <span class="db-text"><strong>Order today</strong> — receive fresh tomorrow morning</span>
+  <span class="db-right">🚚 ₹25 delivery charge</span>
+</div>
+
+<!-- ═══ PRODUCTS ════════════════════════════════ -->
+<main id="main-content">
+
+<section class="section" id="s-bouquets" aria-labelledby="h-bouquets">
+  <div class="sec-hdr">
+    <h2 class="sec-title" id="h-bouquets">💐 Bouquets</h2>
+    <span class="sec-cnt" id="c-bouquets"></span>
+  </div>
+  <div class="pgrid" id="g-bouquets"></div>
+</section>
+
+<section class="section" id="s-vase" aria-labelledby="h-vase" style="margin-top:10px">
+  <div class="sec-hdr">
+    <h2 class="sec-title" id="h-vase">🌷 Flowers for Vase</h2>
+    <span class="sec-cnt" id="c-vase"></span>
+  </div>
+  <div class="pgrid" id="g-vase"></div>
+</section>
+
+<section class="section" id="s-pooja" aria-labelledby="h-pooja" style="margin-top:10px">
+  <div class="sec-hdr">
+    <h2 class="sec-title" id="h-pooja">🙏 Pooja Flowers</h2>
+    <span class="sec-cnt" id="c-pooja"></span>
+  </div>
+  <div class="pgrid" id="g-pooja"></div>
+</section>
+
+<section class="section" id="s-stems" aria-labelledby="h-stems" style="margin-top:10px">
+  <div class="sec-hdr">
+    <h2 class="sec-title" id="h-stems">🌺 Single Stems</h2>
+    <span class="sec-cnt" id="c-stems"></span>
+  </div>
+  <div class="pgrid" id="g-stems"></div>
+</section>
+
+<section class="section" id="s-gajara" aria-labelledby="h-gajara" style="margin-top:10px">
+  <div class="sec-hdr">
+    <h2 class="sec-title" id="h-gajara">🌸 Gajara</h2>
+    <span class="sec-cnt" id="c-gajara"></span>
+  </div>
+  <div class="pgrid" id="g-gajara"></div>
+</section>
+
+<section class="section" id="s-decor" aria-labelledby="h-decor" style="margin-top:10px">
+  <div class="sec-hdr">
+    <h2 class="sec-title" id="h-decor">🎋 Decor &amp; Accessories</h2>
+    <span class="sec-cnt" id="c-decor"></span>
+  </div>
+  <div class="pgrid" id="g-decor"></div>
+</section>
+
+</main>
+
+<!-- ABOUT / DESCRIPTION: visible page content, placed at the bottom above the footer -->
+<section class="seo-intro" aria-labelledby="page-title">
+  <h1 id="page-title">Fresh Flowers &amp; Bouquets Online | BLOOM-THE-RIZZ</h1>
+  <p>Welcome to <strong>BLOOM-THE-RIZZ</strong>, your online flower shop. Explore fresh flower options for gifting, home decoration and daily worship. Choose from beautiful bouquets, flowers for vases, pooja flowers, single stems, gajara and decor accessories.</p>
+  <p>Order online for next-morning delivery. A delivery charge of ₹25 applies. Contact us on WhatsApp to confirm delivery availability for your location.</p>
+  <nav class="seo-category-links" aria-label="Shop flower categories">
+    <a href="#s-bouquets">Shop flower bouquets</a>
+    <a href="#s-vase">Buy flowers for vases</a>
+    <a href="#s-pooja">Shop pooja flowers</a>
+    <a href="#s-stems">Browse single flower stems</a>
+    <a href="#s-gajara">Shop gajara</a>
+    <a href="#s-decor">Flower decor and accessories</a>
+  </nav>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="f-logo">🌹 BLOOM-THE-RIZZ</div>
+  <p>Premium handpicked flowers delivered next morning at your doorstep. Order today, wake up to blooms.</p>
+  <p style="color:rgba(255,255,255,.28);font-size:.68rem">
+    📞 WhatsApp: +91 78299 77348 &nbsp;·&nbsp; Next Morning Delivery &nbsp;·&nbsp; ₹25 Delivery Charge
+  </p>
+  <div class="f-bot">© 2026 BLOOM-THE-RIZZ. All rights reserved. &nbsp;·&nbsp;
+    <a href="https://wa.me/917829977348" style="color:rgba(255,255,255,.3)">Contact Us</a>
+  </div>
+</footer>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
+
+<!-- PRODUCT QUICK VIEW -->
+<div class="qv-overlay" id="qv-overlay" onclick="closeQuickView()" aria-hidden="true"></div>
+<aside class="qv-sheet" id="qv-sheet" role="dialog" aria-label="Product details">
+  <div class="qv-hdr">
+    <button class="xbtn" onclick="closeQuickView()" aria-label="Close">✕</button>
+  </div>
+  <div class="qv-body-inner" id="qv-body"></div>
+</aside>
+
+<!-- ═══ CUSTOMIZE YOUR OWN ══════════════════════ -->
+<div class="big-overlay" id="cx-overlay" onclick="closeCustomPanel()" aria-hidden="true"></div>
+<aside class="big-sheet" id="cx-sheet" role="dialog" aria-label="Customize your own arrangement">
+  <div class="big-hdr">
+    <h3 id="cx-title">💐 Build a Bespoke Gift Bouquet</h3>
+    <button class="xbtn" onclick="closeCustomPanel()" aria-label="Close">✕</button>
+  </div>
+  <div class="big-body" id="cx-body" style="position:relative">
+
+    <div class="cx-sec-title" style="margin-top:0">Choose Your Flowers</div>
+    <div class="chip-wrap" id="cx-flower-chips"></div>
+
+    <div class="cx-sec-title">Arrangement Size</div>
+    <div class="size-wrap" id="cx-size-options"></div>
+
+    <div class="cx-sec-title">Add a Personal Note <span class="cx-optional">(Optional)</span></div>
+    <textarea class="cx-textarea" id="cx-note" placeholder="Write a message to be written on the card…"></textarea>
+
+    <div class="cx-sec-title">Quantity</div>
+    <div class="cx-qty-row">
+      <button class="cx-qty-btn" onclick="cxQty(-1)" aria-label="Decrease quantity">−</button>
+      <span id="cx-qty">1</span>
+      <button class="cx-qty-btn" onclick="cxQty(1)" aria-label="Increase quantity">+</button>
+    </div>
+  </div>
+  <div class="big-foot" style="display:flex;align-items:center;gap:12px">
+    <span id="cx-price" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#1a1a1a;white-space:nowrap">₹450</span>
+    <button class="add-btn" style="flex:1" onclick="cxAddToCart()">Add to Cart 🛒</button>
+  </div>
+</aside>
+
+<!-- ═══ SUBSCRIBE & SAVE ════════════════════════ -->
+<div class="big-overlay" id="sub-overlay" onclick="closeSubPanel()" aria-hidden="true"></div>
+<aside class="big-sheet" id="sub-sheet" role="dialog" aria-label="Subscribe for recurring delivery">
+  <div class="big-hdr">
+    <h3>🔁 Subscribe &amp; Save</h3>
+    <button class="xbtn" onclick="closeSubPanel()" aria-label="Close">✕</button>
+  </div>
+  <div class="big-body" id="sub-body" style="position:relative">
+    <p style="font-size:.82rem;color:#666;margin-bottom:12px">
+      Get fresh flowers delivered automatically, every week or every month.
+    </p>
+
+    <div class="cx-sec-title" style="margin-top:0">How often?</div>
+    <div class="freq-toggle">
+      <div class="freq-opt sel" id="freq-weekly" onclick="setFreq('weekly')">📆 Weekly</div>
+      <div class="freq-opt" id="freq-monthly" onclick="setFreq('monthly')">🗓️ Monthly</div>
+    </div>
+
+    <div id="sub-month-row" style="display:none">
+      <div class="cx-sec-title" style="margin-top:0">Which week of the month?</div>
+      <select class="sub-select" id="sub-week">
+        <option value="1st">1st week</option>
+        <option value="2nd">2nd week</option>
+        <option value="3rd">3rd week</option>
+        <option value="4th">4th week</option>
+        <option value="5th">5th week (if applicable)</option>
+      </select>
+    </div>
+
+    <div class="cx-sec-title" style="margin-top:0">Which day?</div>
+    <select class="sub-select" id="sub-day">
+      <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+      <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+    </select>
+
+    <div class="cx-sec-title" style="margin-top:0">Time slot</div>
+    <div class="slot-grid" style="margin-bottom:14px" role="radiogroup" aria-label="Subscription delivery slots">
+      <div class="slot-card sel" onclick="pickSubSlot(this,'5:30am - 8:00am')" role="radio" tabindex="0" aria-checked="true">
+        <div class="sc-ico">🌅</div><div class="sc-lbl">Early Morning</div><div class="sc-time">5:30am - 8:00am</div>
+      </div>
+      <div class="slot-card" onclick="pickSubSlot(this,'10:00am - 11:00am')" role="radio" tabindex="0" aria-checked="false">
+        <div class="sc-ico">☀️</div><div class="sc-lbl">Late Morning</div><div class="sc-time">10:00am - 11:00am</div>
+      </div>
+      <div class="slot-card" onclick="pickSubSlot(this,'1:00pm - 3:00pm')" role="radio" tabindex="0" aria-checked="false">
+        <div class="sc-ico">🌤️</div><div class="sc-lbl">Afternoon</div><div class="sc-time">1:00pm - 3:00pm</div>
+      </div>
+      <div class="slot-card" onclick="pickSubSlot(this,'4:00pm - 6:00pm')" role="radio" tabindex="0" aria-checked="false">
+        <div class="sc-ico">🌇</div><div class="sc-lbl">Evening</div><div class="sc-time">4:00pm - 6:00pm</div>
+      </div>
+    </div>
+
+    <div class="cx-sec-title" style="margin-top:0">Flower preference (optional)</div>
+    <textarea class="cx-textarea" id="sub-pref" placeholder="E.g. surprise seasonal bouquet, always roses, mix of vase flowers…"></textarea>
+
+    <div class="cx-sec-title">Your Details</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="s-fname">First Name *</label>
+        <input type="text" id="s-fname" placeholder="Rahul"/>
+      </div>
+      <div class="form-group">
+        <label for="s-lname">Last Name</label>
+        <input type="text" id="s-lname" placeholder="Sharma"/>
+      </div>
+    </div>
+    <div class="form-row full">
+      <div class="form-group">
+        <label for="s-phone">Phone Number *</label>
+        <input type="tel" id="s-phone" placeholder="+91 98765 43210" maxlength="15"/>
+      </div>
+    </div>
+    <div class="form-row full">
+      <div class="form-group">
+        <label for="s-flat">Flat / House No. &amp; Building Name *</label>
+        <input type="text" id="s-flat" placeholder="Flat 4B, Sunshine Apartments"/>
+      </div>
+    </div>
+    <div class="form-row full">
+      <div class="form-group">
+        <label for="s-area">Area / Street / Locality *</label>
+        <input type="text" id="s-area" placeholder="MG Road, Indiranagar"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="s-city">City *</label>
+        <input type="text" id="s-city" placeholder="Bengaluru"/>
+      </div>
+      <div class="form-group">
+        <label for="s-pin">PIN Code *</label>
+        <input type="text" id="s-pin" placeholder="560001" maxlength="6" inputmode="numeric"/>
+      </div>
+    </div>
+  </div>
+  <div class="big-foot">
+    <a class="add-btn" style="display:block;text-align:center;text-decoration:none;padding:14px" href="#" onclick="return goSubWA(this)">Confirm Subscription via WhatsApp →</a>
+  </div>
+</aside>
+
+<!-- ═══ CART PANEL ══════════════════════════════ -->
+<aside class="cpanel" id="cpanel" aria-label="Shopping cart" role="dialog">
+  <!-- Header -->
+  <div class="cp-hdr">
+    <h3 id="panelTitle">🛒 Your Cart</h3>
+    <button class="xbtn" onclick="closeCart()" aria-label="Close cart">✕</button>
+  </div>
+
+  <!-- Step indicator -->
+  <div class="steps-bar" role="tablist">
+    <div class="step active" id="stepTab1" role="tab" onclick="goStep(1)">1 · Cart</div>
+    <div class="step" id="stepTab2" role="tab" onclick="goStep(2)">2 · Date &amp; Slot</div>
+    <div class="step" id="stepTab3" role="tab" onclick="goStep(3)">3 · Details</div>
+  </div>
+
+  <!-- ── STEP 1: Cart items ── -->
+  <div class="step-content active" id="step1" role="tabpanel">
+    <div class="cart-body" id="cartBody">
+      <div class="empty-cart">
+        <div class="empty-ico">🌸</div>
+        <p>Your cart is empty!<br>Add some fresh flowers to get started.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 2: Date & Slot ── -->
+  <div class="step-content" id="step2" role="tabpanel">
+    <div class="ds-body">
+
+      <!-- Next day notice -->
+      <div class="nd-notice">
+        <span class="nd-ico">🌙</span>
+        <div class="nd-txt">
+          <strong>Next Morning Delivery Only</strong>
+          We do not offer same-day delivery. Order today and your fresh blooms arrive tomorrow morning!
+        </div>
+      </div>
+
+      <!-- Date -->
+      <span class="field-lbl">📅 Select Delivery Date</span>
+      <div class="date-trigger" id="dateTrigger" onclick="toggleCal()" role="button" tabindex="0"
+        aria-expanded="false" aria-label="Open date picker">
+        <span style="font-size:1.05rem">📅</span>
+        <span class="dt-text ph" id="dtText">Choose tomorrow or later</span>
+        <span class="dt-arr" id="dtArr">▼</span>
+      </div>
+      <div class="cal-wrap" id="calWrap" aria-hidden="true">
+        <div class="cal-box">
+          <div class="cal-nav">
+            <button class="cal-arr" onclick="calShift(-1)" aria-label="Previous month">‹</button>
+            <div class="cal-mth" id="calMth" aria-live="polite"></div>
+            <button class="cal-arr" onclick="calShift(1)" aria-label="Next month">›</button>
+          </div>
+          <div class="cal-grid" id="calGrid" role="grid" aria-label="Calendar"></div>
+        </div>
+      </div>
+
+      <!-- Slot -->
+      <span class="field-lbl" style="margin-top:16px">⏰ Choose Delivery Slot</span>
+      <div class="slot-grid" role="radiogroup" aria-label="Delivery time slots">
+        <div class="slot-card" onclick="pickSlot(this,'5:30am - 8:00am')" role="radio" tabindex="0" aria-checked="false">
+          <div class="sc-inner">
+            <div class="sc-ico">🌅</div>
+            <div class="sc-time">5:30 – 8:00 am</div>
+            <div class="sc-lbl">Early morning</div>
+          </div>
+        </div>
+        <div class="slot-card" onclick="pickSlot(this,'10:00am - 11:00am')" role="radio" tabindex="0" aria-checked="false">
+          <div class="sc-inner">
+            <div class="sc-ico">☀️</div>
+            <div class="sc-time">10:00 – 11:00 am</div>
+            <div class="sc-lbl">Mid morning</div>
+          </div>
+        </div>
+        <div class="slot-card" onclick="pickSlot(this,'1:00pm - 3:00pm')" role="radio" tabindex="0" aria-checked="false">
+          <div class="sc-inner">
+            <div class="sc-ico">🌤️</div>
+            <div class="sc-time">1:00 – 3:00 pm</div>
+            <div class="sc-lbl">Afternoon</div>
+          </div>
+        </div>
+        <div class="slot-card" onclick="pickSlot(this,'4:00pm - 6:00pm')" role="radio" tabindex="0" aria-checked="false">
+          <div class="sc-inner">
+            <div class="sc-ico">🌇</div>
+            <div class="sc-time">4:00 – 6:00 pm</div>
+            <div class="sc-lbl">Evening</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEP 3: Delivery Details ── -->
+  <div class="step-content" id="step3" role="tabpanel">
+    <div class="dd-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-fname">First Name *</label>
+          <input type="text" id="f-fname" placeholder="Rahul" autocomplete="given-name"/>
+        </div>
+        <div class="form-group">
+          <label for="f-lname">Last Name</label>
+          <input type="text" id="f-lname" placeholder="Sharma" autocomplete="family-name"/>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="f-phone">Phone Number *</label>
+          <input type="tel" id="f-phone" placeholder="+91 98765 43210" autocomplete="tel" maxlength="15"/>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="f-flat">Flat / House No. &amp; Building Name *</label>
+          <input type="text" id="f-flat" placeholder="Flat 4B, Sunshine Apartments" autocomplete="address-line1"/>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="f-area">Area / Street / Locality *</label>
+          <input type="text" id="f-area" placeholder="MG Road, Indiranagar" autocomplete="address-line2"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-city">City *</label>
+          <input type="text" id="f-city" placeholder="Bengaluru" autocomplete="address-level2"/>
+        </div>
+        <div class="form-group">
+          <label for="f-pin">PIN Code *</label>
+          <input type="text" id="f-pin" placeholder="560001" maxlength="6" autocomplete="postal-code" inputmode="numeric"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-state">State *</label>
+          <select id="f-state" autocomplete="address-level1">
+            <option value="">Select state</option>
+            <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+            <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+            <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+            <option>Himachal Pradesh</option><option>Jharkhand</option>
+            <option selected>Karnataka</option><option>Kerala</option>
+            <option>Madhya Pradesh</option><option>Maharashtra</option>
+            <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+            <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+            <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+            <option>Telangana</option><option>Tripura</option>
+            <option>Uttar Pradesh</option><option>Uttarakhand</option>
+            <option>West Bengal</option><option>Delhi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-country">Country</label>
+          <input type="text" id="f-country" value="India" autocomplete="country-name"/>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group">
+          <label for="f-note">Delivery Note (optional)</label>
+          <input type="text" id="f-note" placeholder="Leave at door, call on arrival…"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CART FOOTER ── -->
+  <div class="cp-foot" id="cpFoot" style="display:none">
+
+    <!-- Delivery charge highlight -->
+    <div class="dc-box">
+      <span class="dc-ico">🚚</span>
+      <div class="dc-text">
+        <div class="dc-label">Delivery Charge</div>
+        <div class="dc-amount">₹25 <span style="font-size:.7rem;color:#888;font-weight:500">/ order</span></div>
+      </div>
+      <span style="font-size:.68rem;color:#8a6a00;font-weight:600;background:#fef3c7;
+        padding:3px 8px;border-radius:20px">Next Morning</span>
+    </div>
+
+    <!-- Price summary -->
+    <div class="price-row">
+      <span class="lbl">Subtotal</span>
+      <span class="val" id="subtotalVal">₹0</span>
+    </div>
+    <div class="price-row delivery">
+      <span class="lbl">Delivery Charge</span>
+      <span class="val">+ ₹25</span>
+    </div>
+    <hr class="price-divider"/>
+    <div class="price-total">
+      <span>Total Payable</span>
+      <span id="totalVal">₹25</span>
+    </div>
+
+    <!-- Nav buttons -->
+    <div class="btn-row" id="btnRow">
+      <button class="btn-next" id="mainBtn" onclick="mainAction()">Proceed →</button>
+    </div>
+
+  </div>
+</aside>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <div class="t-title" id="tTitle"></div>
+  <div class="t-sub" id="tSub"></div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
